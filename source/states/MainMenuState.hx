@@ -29,7 +29,7 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
-		#if MODS_ALLOWED
+		#if //MODS_ALLOWED
 		Mods.pushGlobalMods();
 		#end
 		Mods.loadTopMod();
@@ -97,13 +97,13 @@ class MainMenuState extends MusicBeatState
 		add(fnfVer);
 		changeItem();
 
-		#if ACHIEVEMENTS_ALLOWED
+		#if //ACHIEVEMENTS_ALLOWED
 		// Unlocks "Freaky on a Friday Night" achievement if it's a Friday and between 18:00 PM and 23:59 PM
 		var leDate = Date.now();
 		if (leDate.getDay() == 5 && leDate.getHours() >= 18)
 			Achievements.unlock('friday_night_play');
 
-		#if MODS_ALLOWED
+		#if //MODS_ALLOWED
 		Achievements.reloadList();
 		#end
 		#end
